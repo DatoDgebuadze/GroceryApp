@@ -11,10 +11,22 @@ export default function GroceriesApp() {
       setCart([...cart, item]);
    };
 
+   // function handleRemove(id) {
+   //    // Call the onRemove function to remove the item from the cart
+   //    setCart((prevList) => prevList.filter((i) => i.id !== id))
+   // }
+
+
+   const handleRemove = (id) => {
+      // Use the setCart function to update the cart by filtering out the item to be removed
+      setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+   };
+
+
    return (
       <div>
          <InventoryCardsContainer items={products} addToCart={addToCart} />
-         <CartListContainer items={cart} />
+         <CartListContainer items={cart} onRemove={handleRemove} />
       </div>
    );
 }

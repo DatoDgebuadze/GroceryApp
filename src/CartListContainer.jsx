@@ -14,8 +14,9 @@ export default function CartListContainer({ items, onRemove }) {
                         key={item.id}
                         productName={item.productName}
                         price={item.price}
-                        image={item.image} // Pass the image prop
-                        onRemove={() => onRemove(key)} // Pass the onRemove function
+                        brand = {item.brand} // Pass the image prop
+                        onRemove={onRemove} // Pass the onRemove function
+                        id={item.id}
                     />
                 ))
             )}
