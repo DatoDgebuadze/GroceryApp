@@ -20,7 +20,7 @@ export default function GroceriesApp() {
 
    const handleRemove = (id) => {
       // Use the setCart function to update the cart by filtering out the item to be removed
-      setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+      setCart((prevCart) => prevCart.filter((i) => i.id !== id));
    };
 
 
