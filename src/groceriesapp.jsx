@@ -25,7 +25,7 @@ export default function GroceriesApp() {
 
 
    return (
-      <div>
+      <div className="GroceriesApp-Container">
          <InventoryCardsContainer items={products} addToCart={addToCart} />
          <CartListContainer items={cart} onRemove={handleRemove} />
       </div>
