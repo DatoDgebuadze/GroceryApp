@@ -8,8 +8,9 @@ export default function GroceriesApp() {
 
    // Function to add items to the cart
    const addToCart = (item) => {
-      setCart([...cart, item]);
+      setCart([...cart, { ...item, id: crypto.randomUUID() }]);
    };
+
 
    // function handleRemove(id) {
    //    // Call the onRemove function to remove the item from the cart
