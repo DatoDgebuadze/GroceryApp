@@ -1,29 +1,23 @@
-import React from 'react';
+export default function InventoryCard({ list, onClick, handleOnDelete }) {
+  return (
+    <div className="Inventory-Container">
+      {list.map((l) => (
+        <div key={l.id} className="Inventory-Card">
+          <img src={l.image} />
+          <h2>{l.productName}</h2>
+          <h3>{l.brand}</h3>
+          <p>{l.quantity}</p>
+          <p>
+            <strong>{l.price}</strong>
+          </p>
+      
+          <button onClick={() => onClick(l)}>Add to cart</button>
+          <div>
+            <button onClick={() => handleOnDelete()}>delete</button>
 
-export default function InventoryCards({ image, productName, brand, quantity, price, addToCart }) {
-    const handleAddToCart = () => {
-        const item = {
-            image,
-            productName,
-            brand,
-            quantity,
-            price,
-        };
-
-    
-        addToCart(item);
-    };
-
-
-    return (
-        <div className="Inventory-Card">
-            <img src={image} alt={productName} />
-            <h2 id="productName">{productName}</h2>
-            <h2 id="brand">{brand}</h2>
-            <h2 id="quantity">{quantity}</h2>
-            <h2 id="price">{price}</h2>
-            
-            <button onClick={handleAddToCart}>Add to cart</button>
+          </div>
         </div>
-    );
+      ))}
+    </div>
+  );
 }
